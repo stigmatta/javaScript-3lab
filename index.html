@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!-- Задание 1
+        <script>
+            document.write("<br>");
+           function lessFromTwo(a,b)
+           {
+                return a<b?a:b;
+           }
+           document.write(lessFromTwo(5,8));
+        </script>
+        --------------------------------------------------------------------- -->
+
+        <!-- Задание 2
+        <script>
+            document.write("<br>");
+            function inPower(a,b)
+            {
+                let tmp=a;
+                for (let i = 0;i<b-1;i++)
+                    a*=tmp;
+                return a;
+            }
+            document.write(inPower(3,2));
+        </script>
+        --------------------------------------------------------------------- -->
+
+        <!-- Задание 3 
+        <script>
+            document.write("<br>");
+            function calculator(a,b,c)
+            {
+                switch(c)
+                {
+                    case '+':
+                        return a+b;
+                        break;
+                    case '-':
+                        return a-b;
+                        break;
+                    case '*':
+                        return a*b;
+                        break;
+                    case '/':
+                        if(b==0)
+                            return 0;
+                        else
+                            return a/b;
+                    default:
+                        return 0;
+                }
+            }
+            document.write(calculator(5,3,'-'));
+        </script>
+        --------------------------------------------------------------------- -->
+
+        <!-- Задание 4
+        <script>
+            document.write("<br>");
+            function simpleDigit(a){
+                for(let i = 2;i<a/2;i++)
+                {
+                    if(a%i==0)
+                        return "Ваше число не является простым";
+                }
+                return "Ваше число простое";
+            }
+            document.write(simpleDigit(23));
+        </script>
+        --------------------------------------------------------------------- -->
+
+        <!-- Задание 5
+        <script>
+            document.write("<br>");
+            function multiplicationTable(a)
+            {
+                for(let i = 2;i<10;i++)
+                {
+                    document.write(i,'*',a,'=',i*a,"<br>");
+                }
+            }
+            multiplicationTable(6);
+        </script>
+        --------------------------------------------------------------------- -->
+
+        <!-- Задание 6
+        <script>
+            document.write("<br>");
+            function dividingByModule(a,b)
+            {
+                while(a-b>0){
+                    a = a-b;
+                }
+                return a;
+            }
+            document.write(dividingByModule(23,3));
+        </script>
+        --------------------------------------------------------------------- -->
+
+        <!-- Задание 7
+        <script>
+            document.write("<br>");
+            function sum()
+            {
+                if(!(arguments.length>=1 && arguments.length <=5))
+                    return "Передайте от 1 до 5 аргументов";
+                else{
+                    let sum=0;
+                    for(let i = 0;i<arguments.length;i++)
+                        sum+=arguments[i];
+                    return sum;
+                }
+            }
+            document.write(sum(5,4,3,2,6,));
+        </script>
+        --------------------------------------------------------------------- -->
+
+        <!-- Задание 8
+        <script>
+            document.write("<br>");
+            function max(){
+                if(!(arguments.length>=1 && arguments.length <=5))
+                    return "Передайте от 1 до 5 аргументов";
+                else{
+                    let max =arguments[0];
+                    for(let i = 0;i<arguments.length;i++)
+                    {
+                        if(arguments[i]>max)
+                            max = arguments[i];
+                    }
+                    return max;
+                }
+            }
+            document.write(max(1,2,3,4,23));
+        </script>
+        --------------------------------------------------------------------- -->
+
+        <!-- Задание 9
+        <script>
+            document.write("<br>");
+            function oddOrEven(a,b,choice){
+                let min = a<b?a:b;
+                let max = a>b?a:b;
+                if(choice==true)
+                {
+                    for(let i = min;i<=max;i++){
+                        if(i%2==0)
+                            document.write(i," ");
+                    }
+                }
+                else{
+                    for(let i = min;i<=max;i++)
+                    {
+                        if(i%2==1)
+                            document.write(i," ");
+                    }
+                }
+            }
+            oddOrEven(7,10,true);
+        </script>
+        --------------------------------------------------------------------- -->
+
+        Задание 10
+        <script>
+            document.write("<br>");
+            function leapYear(year) {
+                return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            }   
+
+            function dateInString(day, month, year) {
+                let string = "";
+
+                if (month == 2 && day > 28) {
+                    if (!leapYear(year))
+                        return "В феврале 28 дней (это не високосный год)";
+                } 
+                if(month<1 || month > 12)
+                    return "Некорректная дата";
+                else {
+                    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                        if (day < 1 || day > 31)
+                            return "Некорректная дата";
+                        else {
+                            if (day < 10)
+                                string += '0';
+                            string += day;
+                            string += '.';
+                            if (month < 10)
+                                string += '0';
+                            string += month;
+                            string += '.';
+                            string += year;
+                        }
+
+                    } else if (month == 2) {
+                        if (day >= 1 && day <= 28) {
+                            if (day < 10) {
+                                string += '0';
+                            }
+                            string += day;
+                            string += ".";
+                            if (month < 10)
+                                string += '0';
+                            string += month;
+                            string += '.';
+                            string += year;
+                        } else {
+                            return "Некорректная дата";
+                        }
+                    } else {
+                        if (day < 1 || day > 30)
+                            return "Некорректная дата";
+                        else {
+                            if (day < 10)
+                                string += '0';
+                            string += day;
+                            string+='.';
+                            if (month < 10)
+                                string += '0';
+                            string += month;
+                            string += '.';
+                            string += year;
+                        }
+                    }
+                }
+            return string;
+        }
+
+    document.write(dateInString(5, 12, 2023));
+
+        </script>
+    </body>
+</html>
